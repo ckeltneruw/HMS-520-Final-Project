@@ -1,0 +1,15 @@
+Team members: Case Keltner and Huong Chu
+Format: Analyzing a dataset that uses data wrangling and modeling tools in R
+Overall goal: (1) Identify how influenza immunization rates differ by demographic and health characteristics, (2) determine whether immunization differs among four regions in the U.S?, and (3) ascertain best model for predicting immunization based on demographics and health characteristics 
+Plan and Timeline:
+  - Download 2021 CDC Behavioral Risk Factor Surveillance System (BRFSS) data set
+  - Clean data in R
+  - Subset data and variables of interest
+  - Calculate immunization rates (number immunized divided by population at-risk)
+  - Run logistic regession analyses to determine which demographic and health variables are associated with having been immunized
+  - Run logistic regression analyses to determine whether immunization rates differ across regions
+  - Implement a Decision Tree Classifier on a copy of the dataset 
+    - Establish different hyperparameters control the height the tree using a loop
+    - Test the model in the test dataset and compute the training and test errors for each plausible option
+    - Based on the training and test errors, determine the best model to predict immunization in the coming year (model with the highest test accuracy or lowest test error)
+  - Plot pertinent findings using ggplot  
