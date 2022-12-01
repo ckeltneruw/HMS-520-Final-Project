@@ -12,3 +12,9 @@ Plan and Timeline:
   - Run logistic and linear regession analyses to determine which demographic, geographic, and health variables are most strongly associated with having been immunized and immunization rates
   - Plot pertinent findings using ggplot
   - Compile key results and figures into powerpoint presentation
+  - Complete final draft of presentation by December 11th and final project by December 14th 
+
+Goals:
+  - Improve data analysis skills
+  - Increase familiarity with presenting data to an audience
+  - Gain experience performing important data analysis and visualization tasks in R
