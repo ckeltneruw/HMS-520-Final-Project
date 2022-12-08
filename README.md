@@ -5,26 +5,22 @@ Team members: Case Keltner and Huong Chu
 Format: Analyzing a dataset that uses data wrangling and modeling tools in R
 
 Overall goal: (1) Identify how influenza immunization rates differ by demographic and health characteristics, (2) determine whether immunization differs among four regions in the U.S, and (3) establish linear model(s) for predicting immunization based on demographic and health characteristics
-
-Dataset Used: 2021 CDC Behavioral Risk Factor Surveillance System (BRFSS) data set (URL: https://www.cdc.gov/brfss/annual_data/annual_2021.html) 
-
-Dataset Description: BRFSS is a collaborative effort between all states and participating territories in the US and participating US and the Centers for Disease Control and Prevention (CDC). The BRFSS is administered by CDC's Population Health Surveillance Branch, under the Division of Population Health at CDC’s National Center for Chronic Disease Prevention and Health Promotion. The BRFSS utilizes health-related telephone surveys that involve health-related risk behaviors (ex.: smoking), chronic health conditions (ex.: asthma), healthcare access (ex.: possession of insurance), and use of preventive services (ex.: colonoscopy) from the noninstitutionalized US adult population (≥ 18 years).
-The BRFSS began in 1984, and it has evolved to the point where the BRFSS now collects data in all 50 states, the District of Columbia, and participating US territories. In 2021, all 50 states, the District of Columbia, Guam, Puerto Rico, and the US Virgin Islands collected BRFSS data. 
-BRFSS’s purpose is to collect uniform state-specific data on potentially risky health behaviors, chronic health conditions, healthcare access, and preventive health services' utilization related to the predominant causes of death and disability in the US. 
+Dataset Used: 2021 CDC Behavioral Risk Factor Surveillance System (BRFSS) data set (URL: https://www.cdc.gov/brfss/annual_data/annual_2021.html)
+Dataset Description: BRFSS is a collaborative effort between all states and participating territories in the US and participating US and the Centers for Disease Control and Prevention (CDC). The BRFSS is administered by CDC's Population Health Surveillance Branch, under the Division of Population Health at CDC’s National Center for Chronic Disease Prevention and Health Promotion. The BRFSS utilizes health-related telephone surveys that involve health-related risk behaviors (ex.: smoking), chronic health conditions (ex.: asthma), healthcare access (ex.: possession of insurance), and use of preventive services (ex.: colonoscopy) from the noninstitutionalized US adult population (≥ 18 years). The BRFSS began in 1984, and it has evolved to the point where the BRFSS now collects data in all 50 states, the District of Columbia, and participating US territories. In 2021, all 50 states, the District of Columbia, Guam, Puerto Rico, and the US Virgin Islands collected BRFSS data. BRFSS’s purpose is to collect uniform state-specific data on potentially risky health behaviors, chronic health conditions, healthcare access, and preventive health services' utilization related to the predominant causes of death and disability in the US.
 
 Project Process: 
-Clean data in R
-Subset data and variables of interest
-Calculate immunization rates (number immunized divided by population at-risk)
-Run logistic and linear regession analyses to determine which demographic, geographic, and health variables are most strongly associated with having been immunized and immunization rates
-Plot pertinent findings using ggplot
-Compile key results and figures into powerpoint presentation
-Complete final draft of presentation by December 11th and final project by December 14th
 
-Project Outcomes:
+Prepare Data for Cleaning: (1) Empty environment and set working directory, (2) Load pertinent packages: data.table, ggplot2, haven, expss, and (3) Download and save 2021 BRFSS data from CDC website.
+	
+Identify Variables of Interest: Variables thought or known to be associated with vaccination status were selected. The outcome of interest was receipt of  the influenza vaccine(intramuscular shot or intranasal spray) in the previous 12 months. The predictors of interest were: age, race, highest level of education achieved, income level, sex, self-identified health status, possession of health insurance, having a healthcare provider, date of last medical checkup, marital status, current smoking status, current alcohol consumption status, inability to see a healthcare provider in the past 12 months due to costs, urban versus rural status, and asthma status. Variables such as education and income are important variables to analyze, as many health outcomes and behaviors (such as vaccine uptake) vary based on socioeconomic status. Furthermore, variables like race and sex are important for identifying systemic inequalities that should be addressed via public health interventions. Health behaviors like alcohol use and smoking may potentially be associated with “high-risk” populations for poor vaccine uptake, and persons with health outcomes like asthma are at greater risk of flu-related morbidity.  
 
-Goals:
+Clean Data: Renaming variables, recoding missing values, assigning values to variables, ad labelling variables are critical tasks in the data cleaning process
 
-Improve data analysis skills
-Increase familiarity with presenting data to an audience
-Gain experience performing important data analysis and visualization tasks in R
+Descriptive Data Analysis: Descriptive analyses include generation of tables and plots. Tables depict the distribution of immunized versus non-immunized persons within each strata of a given predictor of interest. Plots depict the percent of immunized versus non-immunized persons with each strata of a given predictor of interest.
+
+Regression Analyses: Multinomial linear and logistic regression analyses were included. In the linear regression model, covariates were treated as continuous variables. In logistic regression analysis, covariates were treated as categorical variables. Logistic regression analysis is of greater utility for the dataset, as the results are more readily interpretable and actionable. Additional packages (glmnet and boot) were installed to facilitate lasso regression modelling. For the lasso regression, k-fold cross-validation was performed to identify the optimal lambda value that minimizes the mean squared error. A plot of the mean squared error by lambda value was performed. Lastly, regression coefficients of the best model were elicited, which could be used to predict influenza immunization status in future years.
+
+Outcomes: Nearly all covariates demonstrated a statistically significant association with flu immunization status (exceptions: being widowed (relative to being married), making $15,000-$24,999 (relative to making <$15,000), being aged 35-44 years old (relative to being 18-24 years old), and having a high school degree without advanced education (relative to having less than a high school degree)). 
+The effect size of multiple predictors was sizable. For example, individuals who had not seen a doctor for 5 or more years had a 22.5% greater odds of not being immunized relative to individuals who saw a doctor within the past year. 
+
+Summary: This project served multiple purposes. From an educational standpoint, it helped bolster  data analysis skills, increase familiarity with presenting data to an audience, and gain experience performing important data analysis and visualization tasks in R. In terms the analytic results, multiple factors were shown to be associated with flu immunization status in 2021, and lasso regression was used to provide a rudimentary framework for predicting flu immunization status during future years.
