@@ -18,4 +18,4 @@ Plan and Timeline:
 Goals:
   - Improve data analysis skills
   - Increase familiarity with presenting data to an audience
-  - Gain experience performing important data analysis and visualization tasks in R
+  - Gain experience performing important data analysis, modelling, and visualization tasks in R
