@@ -42,7 +42,7 @@ final[, V1 := NULL]
 ##                            CLEANING DATA FILE                             ##
 ###############################################################################
 
-# RENAMES VARIABLES
+# RENAME VARIABLES
 old_names <- c("_state", "_age_g", "_racegr3", "_educag", "_incomg1", "_sex", 
                "marital", "flushot7", "genhlth", "_hlthpln", "persdoc3", 
                "medcost1", "checkup1", "_rfsmok3", "_rfbing5", "_urbstat",
@@ -102,7 +102,7 @@ for (i in states){
 final[region =="a", region := NA]
 final<- final[complete.cases(final)]
 
-# LABLE VARIABLES
+# LABEL VARIABLES
 final = apply_labels(final,
                      age = c("18-24" = 1,
                              "25-34" = 2,
