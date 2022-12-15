@@ -10,7 +10,7 @@ Dataset Description: BRFSS is a collaborative effort between all states and part
 
 Project Process: 
 
-Prepare Data for Cleaning: (1) Empty environment and set working directory, (2) Load pertinent packages: data.table, ggplot2, haven, expss, and (3) Download and save 2021 BRFSS data from CDC website.
+Prepare Data for Cleaning: (1) Empty environment and set working directory, (2) Load pertinent packages: data.table, haven, expss, and (3) Download and save 2021 BRFSS data from CDC website.
 	
 Identify Variables of Interest: Variables thought or known to be associated with vaccination status were selected. The outcome of interest was receipt of  the influenza vaccine(intramuscular shot or intranasal spray) in the previous 12 months. The predictors of interest were: age, race, highest level of education achieved, income level, sex, self-identified health status, possession of health insurance, having a healthcare provider, date of last medical checkup, marital status, current smoking status, current alcohol consumption status, inability to see a healthcare provider in the past 12 months due to costs, urban versus rural status, and asthma status. Variables such as education and income are important variables to analyze, as many health outcomes and behaviors (such as vaccine uptake) vary based on socioeconomic status. Furthermore, variables like race and sex are important for identifying systemic inequalities that should be addressed via public health interventions. Health behaviors like alcohol use and smoking may potentially be associated with “high-risk” populations for poor vaccine uptake, and persons with health outcomes like asthma are at greater risk of flu-related morbidity.  
 
