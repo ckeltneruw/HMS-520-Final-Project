@@ -26,11 +26,6 @@ load("clean_data.Rdata")
 #######                  DESCRIPTIVE ANALYSES - CHARACTERISTICS BY VACCINATION STATUS                  #######
 ##############################################################################################################
 
-# Test for single table : Vaccination rate by region
-
-cross_cases(clean_dt, region, flushot) # distribution
-cross_rpct(clean_dt, region, flushot) # row percent
-
 # Produce a series of tables by vaccination status
 
 variables <- c("region", "age", "race", "education", "income", "sex",'marital_status',
