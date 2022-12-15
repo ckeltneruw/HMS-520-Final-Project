@@ -34,8 +34,8 @@ variables <- c("region", "age", "race", "education", "income", "sex",'marital_st
   
 for (i in variables){
   print(paste0("Vacinnation rates by ", i, ":"))
-  print(cross_cases(clean_dt, get(i), flushot))
-  print(cross_rpct(clean_dt, get(i), flushot))
+  print(cross_cases(clean_dt, get(i), flushot)) # distribution
+  print(cross_rpct(clean_dt, get(i), flushot))  # row percent
 }
 
 
