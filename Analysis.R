@@ -69,8 +69,8 @@ for (i in variables2){
     scale_y_continuous(labels = scales::percent)+
     scale_fill_discrete(labels=c('Yes', 'No')) # change legend values' names 
   
-  print(plots)
-  #ggsave(paste0("Plot for ", i,".png"), plot = plots)
+  #print(plots)
+  ggsave(paste0("Plot for ", i,".png"), plot = plots)
   print(paste0("Done plotting variable: ", i))
 }
 
